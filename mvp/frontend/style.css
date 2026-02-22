@@ -176,7 +176,7 @@ header {
 }
 
 .app-title {
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     font-weight: 800;
     letter-spacing: -0.5px;
     background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green));
@@ -185,34 +185,50 @@ header {
     background-clip: text;
 }
 
-.app-subtitle {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .match-badge {
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    font-size: 1.1rem;
+}
+
+.match-badge.hidden {
+    display: none;
+}
+
+.home-btn {
+    display: inline-flex;
+    align-items: center;
     padding: 8px 20px;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 100px;
+    font-family: var(--font);
     font-size: 0.85rem;
     font-weight: 600;
+    color: var(--text-primary);
     cursor: pointer;
     transition: var(--transition);
 }
 
-.match-badge:hover {
+.home-btn:hover {
     border-color: var(--accent-cyan);
     box-shadow: var(--shadow-glow-cyan);
+    color: var(--accent-cyan);
 }
 
-.match-badge.hidden {
+.home-btn.hidden {
     display: none;
 }
 

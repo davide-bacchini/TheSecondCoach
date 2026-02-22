@@ -80,8 +80,11 @@ function bindEvents() {
     });
   });
 
-  // Match badge click
-  document.getElementById('match-badge').addEventListener('click', () => showView('selector'));
+  // Home button click
+  document.getElementById('home-btn').addEventListener('click', () => {
+    document.getElementById('home-btn').classList.add('hidden');
+    showView('selector');
+  });
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -165,10 +168,8 @@ async function analyzeMatch(matchId, compId, seasonId) {
     currentMatch = data.match;
     currentPlayers = data.players;
 
-    // Update badge
-    const badge = document.getElementById('match-badge');
-    badge.classList.remove('hidden');
-    badge.innerHTML = `⚽ ${currentMatch.home_team} ${currentMatch.home_score} - ${currentMatch.away_score} ${currentMatch.away_team}`;
+    // Show home button
+    document.getElementById('home-btn').classList.remove('hidden');
 
     renderTeamComparison(data.teams);
     renderPlayerRanking();

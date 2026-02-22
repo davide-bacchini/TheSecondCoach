@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Football Analytics Dashboard — Manager View</title>
-  <meta name="description" content="ML-powered football analytics dashboard for coaches and managers. View player performance rankings, action analysis, and AI coaching recommendations.">
+  <title>The Second Coach — Manager View</title>
+  <meta name="description"
+    content="ML-powered football analytics dashboard for coaches and managers. View player performance rankings, action analysis, and AI coaching recommendations.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- ══════════ LOADING SCREEN ══════════ -->
   <div id="loading-screen" class="loading-screen hidden">
@@ -27,12 +32,18 @@
     <div class="header-inner">
       <div class="logo-group">
         <div class="logo-icon">⚽</div>
-        <div>
-          <h1 class="app-title">Football Analytics</h1>
-          <p class="app-subtitle">ML-Powered Manager Dashboard</p>
-        </div>
+        <h1 class="app-title">The Second Coach</h1>
       </div>
-      <div id="match-badge" class="match-badge hidden"></div>
+      <div class="header-actions">
+        <button id="home-btn" class="home-btn hidden">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"
+            style="vertical-align: sub; margin-right: 6px;">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          Home
+        </button>
+      </div>
     </div>
   </header>
 
@@ -49,7 +60,8 @@
       <div class="selector-controls">
         <div class="search-box">
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
           </svg>
           <input type="text" id="match-search" placeholder="Search teams, competitions...">
         </div>
@@ -87,7 +99,7 @@
     <section id="view-player" class="view">
       <button id="back-btn" class="back-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
-          <path d="M15 18l-6-6 6-6"/>
+          <path d="M15 18l-6-6 6-6" />
         </svg>
         Back to Rankings
       </button>
@@ -114,4 +126,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>
