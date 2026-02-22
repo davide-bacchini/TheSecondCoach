@@ -1,0 +1,13 @@
+# Python / Environment
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Data (Too large for GitHub, user must download StatsBomb data themselves)
+data/
+all_data/
+
+# Model Files
+# We can include the model and grid, but let's make sure it's clean

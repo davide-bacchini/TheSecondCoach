@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Analytics Dashboard — Manager View</title>
+  <meta name="description" content="ML-powered football analytics dashboard for coaches and managers. View player performance rankings, action analysis, and AI coaching recommendations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ══════════ LOADING SCREEN ══════════ -->
+  <div id="loading-screen" class="loading-screen hidden">
+    <div class="loading-spinner">
+      <div class="spinner-ring"></div>
+      <div class="spinner-ring"></div>
+      <div class="spinner-ring"></div>
+    </div>
+    <p class="loading-text">Analyzing match data...</p>
+    <p class="loading-sub">Running ML pipeline on 360° tracking data</p>
+  </div>
+
+  <!-- ══════════ HEADER ══════════ -->
+  <header id="app-header">
+    <div class="header-inner">
+      <div class="logo-group">
+        <div class="logo-icon">⚽</div>
+        <div>
+          <h1 class="app-title">Football Analytics</h1>
+          <p class="app-subtitle">ML-Powered Manager Dashboard</p>
+        </div>
+      </div>
+      <div id="match-badge" class="match-badge hidden"></div>
+    </div>
+  </header>
+
+  <!-- ══════════ MAIN CONTENT ══════════ -->
+  <main id="app-main">
+
+    <!-- ── MATCH SELECTOR VIEW ── -->
+    <section id="view-selector" class="view active">
+      <div class="selector-hero">
+        <h2 class="hero-title">Select a Match to Analyze</h2>
+        <p class="hero-sub">Choose from <span id="match-count">0</span> matches with 360° tracking data</p>
+      </div>
+
+      <div class="selector-controls">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" id="match-search" placeholder="Search teams, competitions...">
+        </div>
+        <div class="filter-chips" id="comp-filters"></div>
+      </div>
+
+      <div class="matches-grid" id="matches-grid"></div>
+    </section>
+
+    <!-- ── DASHBOARD VIEW ── -->
+    <section id="view-dashboard" class="view">
+
+      <!-- Team comparison bar -->
+      <div id="team-comparison" class="team-comparison"></div>
+
+      <!-- Player ranking -->
+      <div class="dashboard-section">
+        <div class="section-header">
+          <h2>Player Rankings</h2>
+          <div class="sort-controls">
+            <span class="sort-label">Sort by:</span>
+            <button class="sort-btn active" data-sort="avg_dq">Decision Quality</button>
+            <button class="sort-btn" data-sort="goals_scored">Goals</button>
+            <button class="sort-btn" data-sort="turnovers">Turnovers</button>
+            <button class="sort-btn" data-sort="actions">Actions</button>
+            <button class="sort-btn" data-sort="pass_accuracy">Pass %</button>
+            <button class="sort-btn" data-sort="avg_delta_xt">ΔxT</button>
+          </div>
+        </div>
+        <div id="player-ranking" class="player-ranking"></div>
+      </div>
+    </section>
+
+    <!-- ── PLAYER DETAIL VIEW ── -->
+    <section id="view-player" class="view">
+      <button id="back-btn" class="back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+        Back to Rankings
+      </button>
+
+      <div id="player-header" class="player-header"></div>
+
+      <!-- Stats grid -->
+      <div id="player-stats-grid" class="stats-grid"></div>
+
+      <!-- Action tabs -->
+      <div class="action-tabs">
+        <button class="tab-btn active" data-tab="best">✅ Top 5 Best Actions</button>
+        <button class="tab-btn" data-tab="worst">❌ Top 5 Worst Decisions</button>
+      </div>
+
+      <!-- Pitch panels -->
+      <div id="actions-container" class="actions-container"></div>
+
+      <!-- Coaching Report -->
+      <div id="coaching-report" class="coaching-report"></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
