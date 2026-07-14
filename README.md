@@ -1,7 +1,5 @@
 # The Second Coach
 
-Built at Hacklytics 2026 (Georgia Tech, Atlanta, Feb 20-22).
-
 ## What it does
 
 Every football match has around 3,500 on ball events. Coaches can realistically review a handful. Current analytics measure outcomes: whether a pass was completed, whether a shot was on target. But a good decision that fails gets penalized, and a bad decision that succeeds gets rewarded. There is no separation between the quality of the decision and the quality of the result.
